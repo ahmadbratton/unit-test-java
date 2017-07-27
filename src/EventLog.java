@@ -12,6 +12,15 @@ public class EventLog {
 
     }
 
+    @Override
+    public String toString() {
+        return "EventLog{" +
+                "name='" + name + '\'' +
+                ", action='" + action + '\'' +
+                ", eventList=" + eventList +
+                '}';
+    }
+
     public boolean addEvent(Event event) {
         if (event == null || event.getAction() == null|| event.getName() == null){
             throw new IllegalArgumentException("ERROR EVENT IS NULL ");

@@ -11,6 +11,14 @@ public class Event {
         this.action = action;
     }
 
+    @Override
+    public String toString() {
+        return "Event{" +
+                "name='" + name + '\'' +
+                ", action='" + action + '\'' +
+                '}';
+    }
+
     public String getName() {
         return name;
     }
