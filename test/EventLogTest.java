@@ -1,9 +1,10 @@
+import jdk.nashorn.internal.codegen.types.Type;
 import org.junit.*;
 
 import org.junit.rules.ExpectedException;
 
 import java.lang.IllegalArgumentException;
-import java.util.Set;
+import java.util.*;
 
 import static org.junit.Assert.*;
 
@@ -77,8 +78,15 @@ public class EventLogTest {
         Assert.assertEquals("the event was not added succesfully", successfullAdd3, true);
         Assert.assertEquals("wrong number of events", EventLog.getNumEvents(),3);
 
+    }
 
+    @Test
+    public void checkType() {
+        Event eventType = new Event();
+       eventType.setName("joe");
+       eventType.setAction("eat");
 
+       Assert.assertEquals("this type is not a string ", eventType.getAction().getClass().equals(Type.STRING) ,false);
 
     }
 }
